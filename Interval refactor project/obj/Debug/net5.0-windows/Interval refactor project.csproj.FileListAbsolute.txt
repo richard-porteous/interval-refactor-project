@@ -1,0 +1,18 @@
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\bin\Debug\net5.0-windows\Interval refactor project.exe
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\bin\Debug\net5.0-windows\Interval refactor project.deps.json
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\bin\Debug\net5.0-windows\Interval refactor project.runtimeconfig.json
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\bin\Debug\net5.0-windows\Interval refactor project.runtimeconfig.dev.json
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\bin\Debug\net5.0-windows\Interval refactor project.dll
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\bin\Debug\net5.0-windows\ref\Interval refactor project.dll
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\bin\Debug\net5.0-windows\Interval refactor project.pdb
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.csprojAssemblyReference.cache
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval_refactor_project.IntervalWindow.resources
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.csproj.GenerateResource.cache
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.AssemblyInfoInputs.cache
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.AssemblyInfo.cs
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.csproj.CoreCompileInputs.cache
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.dll
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\ref\Interval refactor project.dll
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.pdb
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.genruntimeconfig.cache
