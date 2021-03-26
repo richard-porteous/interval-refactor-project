@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Interval_refactor_project
 {
-    public partial class IntervalWindow : Form
+    public partial class IntervalView : Form
     {
-        public IntervalWindow()
+        private IntervalController controller;
+        public IntervalView()
         {
             InitializeComponent();
+        }
+
+        internal void SetController(IntervalController cont)
+        {
+            controller = cont;
+            Update(controller, null);
         }
 
         private void StartField_LostFocus(object sender, EventArgs e)
@@ -29,9 +36,12 @@ namespace Interval_refactor_project
 
         private void EndField_LostFocus(object sender, EventArgs e)
         {
-            if (!int.TryParse(_endField.Text.ToString(), out int result))
+            SetEnd(_endField.Text); //catches a direct set of _endField
+                                    //and forces the value through the method
+                                    //becomes obvious when using the domain model
+            if (!int.TryParse(GetEnd(), out int result))
             {
-                _endField.Text = "0";
+                SetEnd("0");
             }
             //var foo = result;
             CalculateLength();
@@ -47,12 +57,26 @@ namespace Interval_refactor_project
             CalculateEnd();
         }
 
+        private void Update( IntervalController ctr, Object arg)
+        {
+
+        }
+
+        private string GetEnd()
+        {
+            return _endField.Text;
+        }
+        private void SetEnd(string arg)
+        {
+            _endField.Text = arg;
+        }
+
         private void CalculateLength() 
         {
             try
             {
                 int start = int.Parse(_startField.Text);
-                int end = int.Parse(_endField.Text);
+                int end = int.Parse(GetEnd());
                 int length = end - start;
                 _lengthField.Text = length.ToString();
             }
@@ -69,7 +93,7 @@ namespace Interval_refactor_project
                 int start = int.Parse(_startField.Text);
                 int length = int.Parse(_lengthField.Text);
                 int end = length + start;
-                _endField.Text = end.ToString();
+                SetEnd(end.ToString());
             }
             catch (Exception)
             {

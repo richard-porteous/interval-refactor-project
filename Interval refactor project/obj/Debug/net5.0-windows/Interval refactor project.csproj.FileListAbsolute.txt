@@ -6,7 +6,6 @@ C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor projec
 C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\bin\Debug\net5.0-windows\ref\Interval refactor project.dll
 C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\bin\Debug\net5.0-windows\Interval refactor project.pdb
 C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.csprojAssemblyReference.cache
-C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval_refactor_project.IntervalWindow.resources
 C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.csproj.GenerateResource.cache
 C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.AssemblyInfoInputs.cache
@@ -16,3 +15,4 @@ C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor projec
 C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\ref\Interval refactor project.dll
 C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.pdb
 C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval refactor project.genruntimeconfig.cache
+C:\Users\richard\Source\Repos\Interval refactor project\Interval refactor project\obj\Debug\net5.0-windows\Interval_refactor_project.IntervalView.resources

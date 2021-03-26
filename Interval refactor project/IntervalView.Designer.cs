@@ -1,7 +1,7 @@
 ﻿
 namespace Interval_refactor_project
 {
-    partial class IntervalWindow
+    partial class IntervalView
     {
         /// <summary>
         ///  Required designer variable.

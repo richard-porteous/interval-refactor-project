@@ -17,7 +17,15 @@ namespace Interval_refactor_project
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IntervalWindow());
+
+            IntervalView view = new IntervalView();
+            IntervalModel mdl = new IntervalModel();
+            IntervalController ctl = new IntervalController(mdl, view);
+
+            //we should run control but not if we run directly as a winforms app
+            //TODO: perhaps we could look at this again
+            view.SetController(ctl);
+            Application.Run(view);
         }
     }
 }
