@@ -18,92 +18,76 @@ namespace Interval_refactor_project
             InitializeComponent();
 
             //TODO: perhaps we could look at this again
-            IntervalModel mdl = new IntervalModel();
-            IntervalController ctl = new IntervalController(mdl, this);
+            IntervalController ctl = new IntervalController(this);
             SetController(ctl);
         }
 
         internal void SetController(IntervalController cont)
         {
             controller = cont;
-            Update(controller, null);
+            Update();
         }
 
         private void StartField_LostFocus(object sender, EventArgs e)
         {
-            if (!int.TryParse(_startField.Text.ToString(), out int result))
+            SetStart(_startField.Text);
+            if (!int.TryParse(GetStart(), out int result))
             {
-                _startField.Text = "0";
+                SetStart("0");
             }
-            //var foo = result;
-            CalculateLength();
+           
         }
 
         private void EndField_LostFocus(object sender, EventArgs e)
         {
-            SetEnd(_endField.Text); //catches a direct set of _endField
-                                    //and forces the value through the method
-                                    //becomes obvious when using the domain model
+            SetEnd(_endField.Text);
             if (!int.TryParse(GetEnd(), out int result))
             {
                 SetEnd("0");
             }
-            //var foo = result;
-            CalculateLength();
+            
         }
 
         private void LengthField_LostFocus(object sender, EventArgs e)
         {
-            if (!int.TryParse(_lengthField.Text.ToString(), out int result))
+            SetLength(_lengthField.Text);
+            if (!int.TryParse(GetLength(), out int result))
             {
-                _lengthField.Text = "0";
+                SetLength("0");
             }
-            //var foo = result;
-            CalculateEnd();
         }
 
-        private void Update( IntervalController ctr, Object arg)
+        public void UpdateFields()
         {
-            _endField.Text = controller.GetEnd(); //avoid recursion
+            _endField.Text = controller.GetEnd(); //avoids recursion by direct setting
+            _startField.Text = controller.GetStart();
+            _lengthField.Text = controller.GetLength();
         }
 
         private string GetEnd()
         {
             return controller.GetEnd();
         }
+        private string GetStart()
+        {
+            return controller.GetStart();
+        }
+        private string GetLength()
+        {
+            return controller.GetLength();
+        }
+        private void SetStart(string arg)
+        {
+            controller.SetStart(arg);
+        }
         private void SetEnd(string arg)
         {
             controller.SetEnd(arg);
         }
-
-        private void CalculateLength() 
+        private void SetLength(string arg)
         {
-            try
-            {
-                int start = int.Parse(_startField.Text);
-                int end = int.Parse(GetEnd());
-                int length = end - start;
-                _lengthField.Text = length.ToString();
-            }
-            catch (Exception)
-            {
-                throw new FormatException("Unexpected Number Format Error");
-            }
+            controller.SetLength(arg);
         }
 
-        private void CalculateEnd() 
-        {
-            try
-            {
-                int start = int.Parse(_startField.Text);
-                int length = int.Parse(_lengthField.Text);
-                int end = length + start;
-                SetEnd(end.ToString());
-            }
-            catch (Exception)
-            {
-                throw new FormatException("Unexpected Number Format Error");
-            }
-        }
     }
 }
