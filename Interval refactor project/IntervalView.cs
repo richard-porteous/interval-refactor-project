@@ -17,7 +17,7 @@ namespace Interval_refactor_project
         {
             InitializeComponent();
 
-            //TODO: perhaps we could look at this again
+            //TODO: this is because form is initialized in program.cs - not necessarily the only way.
             IntervalController ctl = new IntervalController(this);
             SetController(ctl);
         }
@@ -30,38 +30,24 @@ namespace Interval_refactor_project
 
         private void StartField_LostFocus(object sender, EventArgs e)
         {
-            SetStart(_startField.Text);
-            if (!int.TryParse(GetStart(), out int result))
-            {
-                SetStart("0");
-            }
-           
+            SetStart(_startField.Text);   //use field to update domain (is validated by domain too)        
         }
 
         private void EndField_LostFocus(object sender, EventArgs e)
         {
             SetEnd(_endField.Text);
-            if (!int.TryParse(GetEnd(), out int result))
-            {
-                SetEnd("0");
-            }
-            
         }
 
         private void LengthField_LostFocus(object sender, EventArgs e)
         {
             SetLength(_lengthField.Text);
-            if (!int.TryParse(GetLength(), out int result))
-            {
-                SetLength("0");
-            }
         }
 
         public void UpdateFields()
         {
-            _endField.Text = controller.GetEnd(); //avoids recursion by direct setting
-            _startField.Text = controller.GetStart();
-            _lengthField.Text = controller.GetLength();
+            _endField.Text = GetEnd();
+            _startField.Text = GetStart();
+            _lengthField.Text = GetLength();
         }
 
         private string GetEnd()

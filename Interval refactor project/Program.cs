@@ -18,8 +18,8 @@ namespace Interval_refactor_project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            IntervalView view = new IntervalView();
-            Application.Run(view);
+            //IntervalView view = new IntervalView();
+            Application.Run(new IntervalView());
         }
     }
 }

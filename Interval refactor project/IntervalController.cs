@@ -11,9 +11,9 @@ namespace Interval_refactor_project
         private IntervalModel model;
         private IntervalView view;
 
-        private string _end = "0";
-        private string _start = "0";
-        private string _length = "0";
+        private int _end = 0;
+        private int _start = 0;
+        private int _length = 0;
 
         public IntervalController(IntervalView view)
         {
@@ -23,31 +23,38 @@ namespace Interval_refactor_project
 
         public string GetStart()
         {
-            return _start;
+            return _start.ToString();
         }
         public string GetEnd()
         {
-            return _end;
+            return _end.ToString();
         }
         public string GetLength()
         {
-            return _length;
+            return _length.ToString();
         }
         public void SetStart(string arg)
         {
-            _start = arg;
+            //validate
+            _ = int.TryParse(arg, out int result); // we rely on result being 0 if it failed
+            //store
+            _start = result;
+            //logic
             SetStartChanged();
+            //tell observer changes have happened
             NotifyObservers();
         }
         public void SetEnd(string arg)
         {
-            _end = arg;
+            _ = int.TryParse(arg, out int result);
+            _end = result;
             SetEndChanged();
             NotifyObservers();
         }
         public void SetLength(string arg)
         {
-            _length = arg;
+            _ = int.TryParse(arg, out int result);
+            _length = result;
             SetLengthChanged();
             NotifyObservers();
         }
@@ -73,32 +80,12 @@ namespace Interval_refactor_project
 
         private void CalculateLength()
         {
-            try
-            {
-                int start = int.Parse(_start);
-                int end = int.Parse(_end);
-                int length = end - start;
-                _length = length.ToString();
-            }
-            catch (Exception)
-            {
-                throw new FormatException("Unexpected Number Format Error");
-            }
+            _length = _end - _start;
         }
 
         private void CalculateEnd()
         {
-            try
-            {
-                int start = int.Parse(_start);
-                int length = int.Parse(_length);
-                int end = length + start;
-                _end = end.ToString();
-            }
-            catch (Exception)
-            {
-                throw new FormatException("Unexpected Number Format Error");
-            }
+            _end = _length + _start;
         }
     }
 }
