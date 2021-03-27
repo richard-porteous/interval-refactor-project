@@ -8,7 +8,7 @@ Refactor windows forms single form c# app to MVC style using observer not event
 the code is not my idea, but make a great example for using the same concept in c# WinForms apps which are still around to pluage us. 
 It follows the pattern of the following book which had code writen for java and the AWT gui (mostly)
 (Martin Fowler, Refactoring Improving the design of existing code, 29th printing, Chapter 8, Duplicate Observered Data, Nov 2014, Adison-Wesley
-url www.awprofessional.com/otseries under the title Fowler et al. Refactoring: Improving the Design of Existing Code
+url www.awprofessional.com/otseries under the title Fowler et al. Refactoring: Improving the Design of Existing Code)
 
 In his book Martin Fowler suggests that after this refactoring the Gui can easily be replace with another, which is what I intend to use this for.
 
