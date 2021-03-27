@@ -16,6 +16,11 @@ namespace Interval_refactor_project
         public IntervalView()
         {
             InitializeComponent();
+
+            //TODO: perhaps we could look at this again
+            IntervalModel mdl = new IntervalModel();
+            IntervalController ctl = new IntervalController(mdl, this);
+            SetController(ctl);
         }
 
         internal void SetController(IntervalController cont)
@@ -59,16 +64,16 @@ namespace Interval_refactor_project
 
         private void Update( IntervalController ctr, Object arg)
         {
-
+            _endField.Text = controller.GetEnd(); //avoid recursion
         }
 
         private string GetEnd()
         {
-            return _endField.Text;
+            return controller.GetEnd();
         }
         private void SetEnd(string arg)
         {
-            _endField.Text = arg;
+            controller.SetEnd(arg);
         }
 
         private void CalculateLength() 

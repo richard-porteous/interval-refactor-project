@@ -19,11 +19,11 @@ namespace Interval_refactor_project
             this.view = view;
         }
 
-        private string GetEnd()
+        public string GetEnd()
         {
             return _end;
         }
-        private void SetEnd(string arg)
+        public void SetEnd(string arg)
         {
             _end = arg;
             SetChanged();

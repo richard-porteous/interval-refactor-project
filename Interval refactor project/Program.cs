@@ -19,12 +19,6 @@ namespace Interval_refactor_project
             Application.SetCompatibleTextRenderingDefault(false);
 
             IntervalView view = new IntervalView();
-            IntervalModel mdl = new IntervalModel();
-            IntervalController ctl = new IntervalController(mdl, view);
-
-            //we should run control but not if we run directly as a winforms app
-            //TODO: perhaps we could look at this again
-            view.SetController(ctl);
             Application.Run(view);
         }
     }
