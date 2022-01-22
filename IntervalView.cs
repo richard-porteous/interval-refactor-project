@@ -12,9 +12,22 @@ namespace interval_refactor_project
 {
     public partial class IntervalView : Form
     {
+        private IntervalController controller;
+
         public IntervalView()
         {
             InitializeComponent();
+            SetController(new IntervalController(this));
+        }
+
+        internal void SetController(IntervalController cont)
+        {
+            controller = cont;
+            
+        }
+        public void Update()
+        {
+
         }
 
 
@@ -50,6 +63,7 @@ namespace interval_refactor_project
             //var foo = result;
             CalculateEnd();
         }
+
 
         private string GetEnd()
         {
