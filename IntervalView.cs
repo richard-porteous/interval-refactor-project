@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace interval_refactor_project
+﻿namespace interval_refactor_project
 {
     public partial class IntervalView : Form
     {
@@ -17,91 +7,62 @@ namespace interval_refactor_project
         public IntervalView()
         {
             InitializeComponent();
-            SetController(new IntervalController(this));
+
+            IntervalController ctl = new IntervalController(this);
+            SetController(ctl);
         }
 
         internal void SetController(IntervalController cont)
         {
             controller = cont;
-            
+            Update();
         }
-        public void Update()
-        {
-
-        }
-
 
         private void StartField_LostFocus(object sender, EventArgs e)
         {
-            if (!int.TryParse(_startField.Text.ToString(), out int result))
+            try
             {
-                _startField.Text = "0";
+                controller.start = _startField.Text;
             }
-            //var foo = result;
-            CalculateLength();
+            catch
+            {
+                controller.start = "0";
+                MessageBox.Show("Start needs to be a valid Integer");
+            }
         }
 
         private void EndField_LostFocus(object sender, EventArgs e)
         {
-            SetEnd(_endField.Text); //catches a direct set of _endField
-                                    //and forces the value through the method
-                                    //becomes obvious when using the domain model
-            if (!int.TryParse(GetEnd(), out int result))
+            try
             {
-                SetEnd("0");
+                controller.end = _endField.Text;
             }
-            //var foo = result;
-            CalculateLength();
+            catch
+            {
+                controller.end = "0";
+                MessageBox.Show("End needs to be a valid Integer");
+            }
         }
 
         private void LengthField_LostFocus(object sender, EventArgs e)
         {
-            if (!int.TryParse(_lengthField.Text.ToString(), out int result))
-            {
-                _lengthField.Text = "0";
-            }
-            //var foo = result;
-            CalculateEnd();
-        }
-
-
-        private string GetEnd()
-        {
-            return _endField.Text;
-        }
-        private void SetEnd(string arg)
-        {
-            _endField.Text = arg;
-        }
-
-        private void CalculateLength() 
-        {
             try
             {
-                int start = int.Parse(_startField.Text);
-                int end = int.Parse(GetEnd());
-                int length = end - start;
-                _lengthField.Text = length.ToString();
+                controller.length = _lengthField.Text;
             }
-            catch (Exception)
+            catch
             {
-                throw new FormatException("Unexpected Number Format Error");
+                controller.length = "0";
+                MessageBox.Show("Length needs to be a valid Integer");
             }
         }
 
-        private void CalculateEnd() 
+        public void Update()
         {
-            try
-            {
-                int start = int.Parse(_startField.Text);
-                int length = int.Parse(_lengthField.Text);
-                int end = length + start;
-                SetEnd(end.ToString());
-            }
-            catch (Exception)
-            {
-                throw new FormatException("Unexpected Number Format Error");
-            }
+            _endField.Text = controller.end;
+            _startField.Text = controller.start;
+            _lengthField.Text = controller.length;
         }
+
     }
 }
