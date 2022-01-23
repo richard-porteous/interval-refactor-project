@@ -9,7 +9,7 @@ namespace interval_refactor_project
     class IntervalController
     {
         private IntervalModel model;
-        private IntervalView view;
+        private Iforms view;
 
         private string _end = "0";
         private string _start = "0";
@@ -46,7 +46,7 @@ namespace interval_refactor_project
             }
         }
 
-        public IntervalController(IntervalView view)
+        public IntervalController(Iforms view)
         {
             this.model = new IntervalModel();
             this.view = view;

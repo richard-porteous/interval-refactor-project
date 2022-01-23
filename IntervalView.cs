@@ -1,6 +1,6 @@
 ﻿namespace interval_refactor_project
 {
-    public partial class IntervalView : Form
+    public partial class IntervalView : Form, Iforms
     {
         private IntervalController controller;
 
